@@ -1,0 +1,16 @@
+# Java class files
+*.class
+
+# Gradle files
+.gradle/
+build/
+
+# Log Files
+*.log
+
+# IntelliJ
+*.iml
+/.idea/*
+
+# Version control
+vcs.xml
