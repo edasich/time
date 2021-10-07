@@ -5,6 +5,18 @@ import java.time.format.DateTimeParseException
 
 object DateTime {
 
+    fun getCurrentDateTime(): LocalDateTime {
+        return LocalDateTime.now()
+    }
+
+    fun getCurrentDate(): LocalDate {
+        return LocalDate.now()
+    }
+
+    fun getCurrentTime(): LocalTime {
+        return LocalTime.now()
+    }
+
     fun getDateTime(date: LocalDate, time: LocalTime): LocalDateTime {
         return LocalDateTime.of(
             date,
@@ -12,16 +24,36 @@ object DateTime {
         )
     }
 
-    fun getDaysAgo(days: Long): LocalDate {
-        return LocalDate
-            .now()
-            .minusDays(days)
+    fun getDaysAgo(days: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.minusDays(days)
     }
 
-    fun getYearsAgo(years: Long): LocalDate {
-        return LocalDate
-            .now()
-            .minusYears(years)
+    fun getDaysLater(days: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.plusDays(days)
+    }
+
+    fun getWeeksAgo(weeks: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.minusWeeks(weeks)
+    }
+
+    fun getWeeksLater(weeks: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.plusWeeks(weeks)
+    }
+
+    fun getMonthsAgo(months: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.minusMonths(months)
+    }
+
+    fun getMonthsLater(months: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.plusMonths(months)
+    }
+
+    fun getYearsAgo(years: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.minusYears(years)
+    }
+
+    fun getYearsLater(years: Long, from: LocalDateTime = getCurrentDateTime()): LocalDateTime {
+        return from.plusYears(years)
     }
 
     fun getCurrentDayOfWeek(): String {
@@ -29,14 +61,6 @@ object DateTime {
             .now()
             .dayOfWeek!!
             .name
-    }
-
-    fun getCurrentDateTime(): LocalDateTime {
-        return LocalDateTime.now()
-    }
-
-    fun getCurrentTime(): LocalTime {
-        return LocalTime.now()
     }
 
     @Throws(DateTimeParseException::class)
@@ -49,7 +73,7 @@ object DateTime {
         return time.isAfter(start) && time.isBefore(end)
     }
 
-    fun isSameDay(firstDate: LocalDate, secondDate: LocalDate) : Boolean {
+    fun isSameDay(firstDate: LocalDate, secondDate: LocalDate): Boolean {
         return firstDate.isEqual(secondDate)
     }
 
