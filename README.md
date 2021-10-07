@@ -3,7 +3,7 @@
 
 ### Dependency
 ```
-implementation 'com.github.edasich:time:1.0.0'
+implementation 'com.github.edasich:time:LATEST_VERSION'
 ```
 
 ### How to use it ?
