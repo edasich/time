@@ -1,5 +1,6 @@
 # Java LocalDateTime Wrapper
 [![](https://jitpack.io/v/edasich/time.svg)](https://jitpack.io/#edasich/time)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Dependency
 ```
